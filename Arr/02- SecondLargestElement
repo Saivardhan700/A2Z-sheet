@@ -1,0 +1,26 @@
+public class Main {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=scn.nextInt();
+        }
+        int sL = secondLargest(arr);
+        System.out.println("Second Largest Element "+ sL);
+    }
+  static int secondLargest(int arr[]){
+        int max = arr[0];
+        int sec_max = Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>max){
+               sec_max = max;
+                max=arr[i];
+            }
+            else if (arr[i]>sec_max && arr[i]!=max){
+                sec_max = arr[i];
+            }
+        }
+        return sec_max;
+    }
+}
